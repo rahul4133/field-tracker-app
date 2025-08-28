@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Eye, EyeOff, LogIn } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -117,12 +118,23 @@ const Login = () => {
 
           <div className="text-center">
             <p className="text-sm text-gray-600">
-              Demo Credentials:
+              Don't have an account?{' '}
+              <Link
+                to="/register"
+                className="font-medium text-primary-600 hover:text-primary-500"
+              >
+                Create Account
+              </Link>
             </p>
-            <div className="mt-2 space-y-1 text-xs text-gray-500">
-              <p><strong>Admin:</strong> admin@fieldtracker.com / password123</p>
-              <p><strong>Manager:</strong> manager@fieldtracker.com / password123</p>
-              <p><strong>Employee:</strong> employee@fieldtracker.com / password123</p>
+            <div className="mt-4">
+              <p className="text-sm text-gray-600">
+                Demo Credentials:
+              </p>
+              <div className="mt-2 space-y-1 text-xs text-gray-500">
+                <p><strong>Admin:</strong> admin@fieldtracker.com / admin123</p>
+                <p><strong>Manager:</strong> manager@fieldtracker.com / manager123</p>
+                <p><strong>Employee:</strong> employee@fieldtracker.com / employee123</p>
+              </div>
             </div>
           </div>
         </form>
